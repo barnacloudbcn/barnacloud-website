@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alta de clientes | Backups Online Barcelona</title>
+  <meta name="description" content="Formulario de alta para nuevos clientes de Backups Online Barcelona: nube privada y backups en la nube con datos en España." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <style>
+    body { font-family: Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial }
+    :focus-visible { outline: 2px solid #6366f1; outline-offset: 2px }
+    html { scroll-behavior: smooth }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-slate-200" role="banner">
+    <div class="max-w-6xl mx-auto px-4 py-2 md:py-3 flex items-center justify-between">
+      <a href="./" class="flex items-center gap-3 md:gap-4" aria-label="Inicio">
+        <img src="logos/logo01.png" alt="Backups Online Barcelona" class="h-[28px] md:h-[36px] lg:h-[44px] w-auto shrink-0" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#features">Funcionalidades</a>
+        <a href="index.html#pricing">Precios</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#about">Quiénes somos</a>
+        <a href="index.html#contact">Contacto</a>
+        <a href="alta-clientes.html" class="font-semibold text-indigo-600">Alta clientes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-slate-50 to-white py-16">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900">Darme de alta como cliente</h1>
+        <p class="mt-4 text-lg text-slate-600">Completa este formulario para comenzar a disfrutar de tu nube privada y backups seguros en Barcelona.</p>
+      </div>
+
+      <!-- Formulario -->
+      <div class="max-w-3xl mx-auto mt-12 bg-white rounded-2xl shadow-lg p-8">
+        <!-- Netlify Forms: envía y luego configura notificación por email (nosololinux@gmail.com) en el panel -->
+        <form name="alta-clientes" method="post" action="/gracias.html" data-netlify="true" netlify-honeypot="bot-field" class="grid gap-6">
+          <input type="hidden" name="form-name" value="alta-clientes" />
+          <p class="hidden"><label>No rellenes esto: <input name="bot-field" /></label></p>
+
+          <!-- Plan bloqueado a Starter -->
+          <div class="rounded-xl border bg-slate-50 p-4 text-sm text-slate-700">
+            <strong>Plan seleccionado:</strong> Starter Sync — 200 GB — 9,90 €/mes (IVA no incluido). Puedes ampliar más adelante.
+            <input type="hidden" name="plan" value="Starter Sync 200GB" />
+          </div>
+
+          <!-- Persona de contacto -->
+          <fieldset class="grid gap-4">
+            <legend class="text-base font-semibold">Persona de contacto</legend>
+            <div class="grid md:grid-cols-2 gap-4">
+              <label class="grid gap-1" for="nombre">
+                <span class="text-sm">Nombre y apellidos *</span>
+                <input id="nombre" name="nombre" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="telefono">
+                <span class="text-sm">Teléfono *</span>
+                <input id="telefono" name="telefono" required pattern="[0-9 +()-]{6,}" class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1 md:col-span-2" for="email">
+                <span class="text-sm">Email *</span>
+                <input id="email" type="email" name="email" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Datos de facturación / empresa -->
+          <fieldset class="grid gap-4">
+            <legend class="text-base font-semibold">Datos de facturación</legend>
+            <div class="grid md:grid-cols-2 gap-4">
+              <label class="grid gap-1" for="empresa">
+                <span class="text-sm">Empresa / Autónomo *</span>
+                <input id="empresa" name="empresa" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="nif">
+                <span class="text-sm">CIF / NIF *</span>
+                <input id="nif" name="nif" required pattern="[A-Za-z0-9-]{5,}" class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1 md:col-span-2" for="direccion">
+                <span class="text-sm">Dirección fiscal *</span>
+                <input id="direccion" name="direccion" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="ciudad">
+                <span class="text-sm">Ciudad *</span>
+                <input id="ciudad" name="ciudad" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="cp">
+                <span class="text-sm">Código postal *</span>
+                <input id="cp" name="cp" required pattern="[0-9]{4,6}" class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="email_factura">
+                <span class="text-sm">Email de facturación *</span>
+                <input id="email_factura" name="email_factura" type="email" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="metodo_pago">
+                <span class="text-sm">Método de pago *</span>
+                <select id="metodo_pago" name="metodo_pago" required class="px-3 py-2 rounded-xl border bg-white">
+                  <option value="transferencia" selected>Transferencia / SEPA</option>
+                  <option value="tarjeta">Tarjeta (enlace de pago)</option>
+                </select>
+              </label>
+              <label class="grid gap-1 md:col-span-2" for="iban">
+                <span class="text-sm">IBAN (opcional para SEPA)</span>
+                <input id="iban" name="iban" class="px-3 py-2 rounded-xl border bg-white" placeholder="ES76 2100 0418 4502 0005 1332" />
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Configuración de servicio -->
+          <fieldset class="grid gap-4">
+            <legend class="text-base font-semibold">Configuración inicial</legend>
+            <div class="grid md:grid-cols-2 gap-4">
+              <label class="grid gap-1" for="usuarios">
+                <span class="text-sm">Usuarios iniciales *</span>
+                <input id="usuarios" name="usuarios" type="number" min="1" step="1" value="1" required class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+              <label class="grid gap-1" for="subdominio">
+                <span class="text-sm">Subdominio preferido</span>
+                <div class="flex items-center gap-2">
+                  <input id="subdominio" name="subdominio" class="px-3 py-2 rounded-xl border bg-white flex-1" placeholder="tu-empresa" />
+                  <span class="text-sm text-slate-500">.backupsbarcelona.example</span>
+                </div>
+              </label>
+              <label class="grid gap-1" for="fecha">
+                <span class="text-sm">Fecha preferida de inicio</span>
+                <input id="fecha" name="fecha" type="date" class="px-3 py-2 rounded-xl border bg-white" />
+              </label>
+            </div>
+            <label class="grid gap-1" for="comentarios">
+              <span class="text-sm">Comentarios (sistemas, NAS, M365, etc.)</span>
+              <textarea id="comentarios" name="comentarios" rows="3" class="px-3 py-2 rounded-xl border bg-white"></textarea>
+            </label>
+          </fieldset>
+
+          <!-- RGPD y comunicaciones -->
+          <fieldset class="grid gap-4">
+            <legend class="text-base font-semibold">RGPD y comunicaciones</legend>
+            <label class="inline-flex items-start gap-2">
+              <input type="checkbox" name="acepto_rgpd" required class="mt-1 h-4 w-4" />
+              <span class="text-sm">Confirmo que he leído y acepto el <a href="legal/privacidad.html" class="underline">Aviso de privacidad</a> y el <a href="#" class="underline" title="Contrato de encargo de tratamiento">Contrato de Encargado de Tratamiento</a>.</span>
+            </label>
+            <label class="inline-flex items-start gap-2">
+              <input type="checkbox" name="acepto_comunicaciones" class="mt-1 h-4 w-4" />
+              <span class="text-sm">Deseo recibir comunicaciones técnicas y actualizaciones del servicio.</span>
+            </label>
+          </fieldset>
+
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <p class="text-xs text-slate-500">Protegido mediante antispam y verificación por email. Puedes cancelar en cualquier momento.</p>
+            <button type="submit" class="inline-flex px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold shadow hover:bg-indigo-700">Enviar solicitud de alta</button>
+          </div>
+        </form>
+        <p class="mt-3 text-xs text-slate-500">Si prefieres, también puedes escribirnos directamente a <a href="mailto:nosololinux@gmail.com" class="underline">nosololinux@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200 bg-white" role="contentinfo">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-4 text-center">
+      <div class="text-sm text-slate-500">© <span id="year"></span> Backups Online Barcelona</div>
+      <nav class="flex items-center gap-6 text-sm" aria-label="Legal">
+        <a href="legal/aviso-legal.html">Aviso legal</a>
+        <a href="legal/privacidad.html">Privacidad</a>
+        <a href="legal/cookies.html">Cookies</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
